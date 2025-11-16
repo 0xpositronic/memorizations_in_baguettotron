@@ -39,16 +39,16 @@ after deduplicating similar samples we are left with 662 unique memorized window
 most of these are math exercises:<br>
 
 
-{'exercise': 'math exercise', 'language': 'en'}: 394 windows<br>
+394 windows {'exercise': 'math exercise', 'language': 'en'}<br>
 
 
-{'exercise': 'math mcq', 'language': 'en'}: 138 windows<br>
+138 windows {'exercise': 'math mcq', 'language': 'en'}<br>
 
 
-{'exercise': 'memorization', 'language': 'en'}: 72 windows<br>
+72 windows  {'exercise': 'memorization', 'language': 'en'}<br>
 
 
-{'exercise': 'constrained writing', 'language': 'en'}: 19 windows<br>
+19 windows  {'exercise': 'constrained writing', 'language': 'en'}<br>
 
 
 ...
