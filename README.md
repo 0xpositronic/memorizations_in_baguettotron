@@ -1,44 +1,5 @@
-# Finding and removing training data memorizations in Baguettotron
-Applying memorization detection and removal methods in [this paper](https://arxiv.org/abs/2510.24256) to [Baguettotron](https://huggingface.co/PleIAs/Baguettotron) reasoning model.<br>
 
-![activation ratio between memorized and clean examples: K-FAC of up_proj weights](data/plots/activation_ratio_up_proj.png)<br>
 
-Here, we can see seperation of different eigenvector bands even more clearly than the paper.<br>
-
----
-
-## Collecting memorized training data samples
-Almost all documents in Baguettotron's training data(SYNTH), have highly structured thinking/reasoning sections that usually start by repeating or rephrasing the query.<br>
-To isolate simple token copying behaviour from memorization, we only search <think></think>+answer part of each document to find memorizations.<br>
-
-after deduplicating similar samples we are left with 662 unique memorized windows of 112(64 prefix, 48 suffix) tokens.<br>
-most of these are math exercises:<br>
-{'exercise': 'math exercise', 'language': 'en'}: 394 windows<br>
-{'exercise': 'math mcq', 'language': 'en'}: 138 windows<br>
-{'exercise': 'memorization', 'language': 'en'}: 72 windows<br>
-{'exercise': 'constrained writing', 'language': 'en'}: 19 windows<br>
-...
-
-After, we collect non-memorized windows with same metadata distribution.<br>
-
-For editing weights I choosed layers between 60-70 based on where top and bottom eigenvectors show the most divergence.<br>
-
-# Effect of weight edits
-base model:
-  - memorization Accuracy: 95.62%
-  - avg levenshtein distance: 0.38
-  - perplexity on clean set: 5.61
-
-60-71-k60: (layers 60-70, 40% mask)
-  - memorization Accuracy: 11.78%
-  - avg levenshtein distance: 17.04
-  - perplexity on clean set: 6.06
-
-50-75-k50: (layers 50-74 50% mask)
-  - memorization Accuracy: 0.45%
-  - avg levenshtein distance: 31.62
-  - perplexity on clean set: 10.26
-  
 ---
 
 # Comparing generations on randomly selected sample of each type
