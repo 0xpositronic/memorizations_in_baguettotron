@@ -1,3 +1,5 @@
+# Finding and removing training data memorizations in Baguettotron
+Applying memorization detection and removal methods in [this paper](https://arxiv.org/abs/2510.24256) to [Baguettotron](https://huggingface.co/PleIAs/Baguettotron) reasoning model.
 
 
 ---
