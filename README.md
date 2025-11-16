@@ -2,7 +2,7 @@
 
 ---
 
-# Comparing generations
+# Comparing generations on randomly selected sample of each type
 
 ## Effect on memorized data
 
