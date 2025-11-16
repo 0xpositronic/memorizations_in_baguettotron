@@ -2,9 +2,9 @@
 
 ---
 
-# Model Generation Comparison Report
+# Comparing generations
 
-## Samples from: Effect on memorized data
+## Effect on memorized data
 
 | # | Metadata | Prefix | Ground Truth Suffix | Original Model | Edited Model |
 |---|---|---|---|---|---|
@@ -14,7 +14,7 @@
 | 4 | `{'language': 'en', 'exercise': 'rag'}` | ... use of diving equipment, safety, emergency self-help and rescue procedures, dive planning, and use of dive tables or a personal dive computer. name="` | >Basic diver training entails the learning of skills required for the safe conduct of activities in an underwater environment, and includes procedures and skills for the use of diving equipment, safety, emergency self-help and rescue procedures, dive planning, and use | ❌ ).<br><br>Diving is a physical activity that involves the use of one's body to accomplish a specific task. It is a form of exercise that is performed in a confined space, and is often performed in a diving suit. Diving | ❌ .)<br><br>Diver training is a form of underwater education that is taught to divers. It is a form of underwater education that is taught to divers. It is a form of underwater education that is taught to divers. It is a form |
 | 5 | `{'language': 'en', 'exercise': 'math mcq'}` | ...(73,40) = 0 ≠ 177 ✗<br><br>**k = 74:** C(74,40) = 0 ≠ 177 ✗<br><br>**k = 75:** C(75,40) = 0 ≠ 177 ✗<br><br>**k = 76:** C(76,40` | ) = 0 ≠ 177 ✗<br><br>**k = 77:** C(77,40) = 0 ≠ 177 ✗<br><br>**k = 78:** C(78,40) = 0 ≠ 177 ✗ | ✅ ) = 0 ≠ 177 ✗<br><br>**k = 77:** C(77,40) = 0 ≠ 177 ✗<br><br>**k = 78:** C(78,40) = 0 ≠ 177 ✗ | ❌ ) = 0 ≠ 177 ✗<br><br>**k = 78:** C(78,40) = 0 ≠ 177 ✗<br><br>**k = 79:** C(79,40) = 0 ≠ 177 ✗ |
 
-## Samples from: Effect on new (not used to determine layer selection) memorized data
+## Effect on new (not used to determine layer selection) memorized data
 
 | # | Metadata | Prefix | Ground Truth Suffix | Original Model | Edited Model |
 |---|---|---|---|---|---|
@@ -24,7 +24,7 @@
 | 4 | `{'language': 'en', 'exercise': 'memorization'}` | ...ve: E = (ΔQ/ΔP) matrix inversion<br><br>**Matrix form**:<br>```<br>[e₁₁ e₁₂... e₁ₙ] [ΔP₁]   = [ΔQ₁]<br>[e₂₁ e₂₂... e₂ₙ] [ΔP` | ₂]   = [ΔQ₂]<br>...<br>[eₙ₁ eₙ₂... eₙₙ] [ΔPₙ]   = [ΔQₙ]<br>```<br><br>**Key | ✅ ₂]   = [ΔQ₂]<br>...<br>[eₙ₁ eₙ₂... eₙₙ] [ΔPₙ]   = [ΔQₙ]<br>```<br><br>**Key | ❌ ₂] = [ΔQ₂]<br>...<br>[eₙ₁ eₙ₂... eₙₙ] [ΔPₙ] = [ΔQₙ]<br>```<br><br>**Key insight**: |
 | 5 | `{'language': 'en', 'exercise': 'math exercise'}` | ...nteger)<br><br>∴ 7 is prime <br><br>### 4. Verification & Edge Cases<br><br>Let me double-check some smaller candidates:<br><br>n = 1: digit_sum(1) = 1 ≠ 7 ✗<br>n = 2: digit_sum` | (2) = 2 ≠ 7 ✗  <br>n = 3: digit_sum(3) = 3 ≠ 7 ✗<br>n = 4: digit_sum(4) = 4 ≠ 7 ✗<br> | ✅ (2) = 2 ≠ 7 ✗  <br>n = 3: digit_sum(3) = 3 ≠ 7 ✗<br>n = 4: digit_sum(4) = 4 ≠ 7 ✗<br> | ✅ (2) = 2 ≠ 7 ✗  <br>n = 3: digit_sum(3) = 3 ≠ 7 ✗<br>n = 4: digit_sum(4) = 4 ≠ 7 ✗<br> |
 
-## Samples from: Effect on non-memorized data
+## Effect on non-memorized data
 
 | # | Metadata | Prefix | Original Model Output | Edited Model Output | Output Diff (Levenshtein) |
 |---|---|---|---|---|---|
